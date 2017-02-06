@@ -1,20 +1,18 @@
-Just React
-==========
+# Just React
 
-ES5 version of React served up from a basic static HTML server
+# basic static HTML server + ES5 React
 
 `File Structure`
+
 ```
 |- browser
-  |- index.html
-  |- app.js (client-side root, uses reactDOM to link to index.html)
-  |- components (other react components)
+  |- app.js (client-side root)
+  |- etc. (more client side files would go here)
 |
-|- public (general publicly served files, just CSS right now)
-|- server
-   |- index.js (server-side root)
+|- public    (serves CSS and index.html)
+|- server.js (server-side root)
 ```
-Server serves up `index.html` for all routes
+## Server serves up single `index.html` for all routes
 
 `index.html`
 
@@ -41,7 +39,8 @@ Server serves up `index.html` for all routes
   </body>
 </html>
 ```
-`app.js` runs our ES5 React (assumes React & ReactDOM globals)
+
+## `app.js` runs our ES5 React (assumes React & ReactDOM globals)
 
 ```js
 const App = React.createElement('h1', null, 'Hello World');

@@ -7,21 +7,17 @@ const path = require('path');
 const app = express();
 const PORT = 3001;
 
-const publicPath     = path.join(__dirname, '../public');
-const browserPath    = path.join(__dirname, '../browser');
-const dependencyPath = path.join(__dirname, '../node_modules');
-
 // logging
 app.use(morgan('dev'));
 
 // serves up files from /public, /browser, /node_modules
-app.use(express.static(publicPath));
-app.use(express.static(browserPath));
-app.use(express.static(dependencyPath));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'browser')));
+app.use(express.static(path.join(__dirname, 'node_modules')));
 
-// serves up main (only) page /browser/index.html
+// serves up main (only) page /index.html
 app.get('/', (req, res, next) => {
-  res.redirect(browserPath);
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // api layer could be added here if desired

@@ -2,9 +2,8 @@
   "name": "basic-es5-example",
   "version": "1.0.0",
   "description": "Most basic setup for using React",
-  "main": "index.js",
   "scripts": {
-    "start": "nodemon server/index.js"
+    "start": "nodemon server.js"
   },
   "author": "Benjamin Cohen",
   "license": "ISC",
